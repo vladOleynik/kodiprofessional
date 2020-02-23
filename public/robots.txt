@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /*?search=
+Disallow: /*&page=
+
+Sitemap: https://kodiprofessional.com/sitemap.xml
+Sitemap: https://kodiprofessional.com/sitemapimages.xml

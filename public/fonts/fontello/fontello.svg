@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2018 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="chat" unicode="&#xe803;" d="M834 767q65 0 110-46t46-110l0-365q0-65-46-111t-110-45l-469 0-156-157 0 157-53 0q-65 0-110 45t-46 111l0 365q0 65 46 110t110 46l678 0z m51-521l0 365q0 21-15 37t-36 15l-678 0q-21 0-37-15t-15-37l0-365q0-21 15-36t37-15l678 0q21 0 36 15t15 36z m-625 79q-42 0-73 30t-31 73 31 74 73 30q44 0 74-31t31-73-31-73-74-30z m0 156q-21 0-36-16t-15-37 15-36 36-15 37 15 16 36-16 37-37 16z m235-156q-44 0-74 30t-31 73 31 73 74 31q43 0 73-30t31-74-31-73-73-30z m0 156q-21 0-37-16t-15-37 15-36 37-15 37 15 16 36-16 37-37 16z m234-156q-44 0-74 30t-30 73 30 74 74 30 74-31 31-73-31-73-74-30z m0 156q-21 0-36-16t-15-37 15-36 36-15 37 15 15 36-15 37-37 16z" horiz-adv-x="990" />
+</font>
+</defs>
+</svg>
