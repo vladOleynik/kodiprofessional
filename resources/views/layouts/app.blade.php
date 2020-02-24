@@ -195,10 +195,13 @@
                         <li><a href="{{route('wholesale')}}">Wholesale Prices</a></li>
                         <li><a href="{{route('shipping')}}">Shiping and Payments</a></li>
                         <li><a href="{{route('purchase')}}">Purchase returns</a></li>
-						<li><a href="{{route('contact')}}">Contacts</a></li> 
+						<li><a href="{{route('contact')}}">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="top-nav-right">
+                    @if(auth()->user())
+                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My account</a>
+                    @endif
                     <button data-popup="#popup-feedback" class="button-msg">Send message<i
                             class="fa fa-paper-plane"></i></button>
                     @if(auth()->user())

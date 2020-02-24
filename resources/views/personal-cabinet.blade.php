@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <div class="main-page-header-img"></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="orders--list">
@@ -23,6 +24,7 @@
                     <div class="order--list__table">
                         <div class="olrder--list__row order--table__header">
                             <div class="order--list__cell">Products list</div>
+                            <div class="order--list__cell">Products image</div>
                             <div class="order--list__cell ">Price</div>
                             <div class="order--list__cell ">Quantity</div>
                             <div class="order--list__cell ">Payment Status</div>
@@ -33,6 +35,17 @@
                                 <ul>
                                     @foreach($order->details as $detail)
                                     <li>{{$detail->product->title}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="order--list__cell ">
+                                <ul>
+                                    @foreach($order->details as $detail)
+                                        <li>
+                                            @foreach($detail->product->images as $image)
+                                            <img src="{{asset($image)}}" alt="" width="50px">
+                                            @endforeach
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
