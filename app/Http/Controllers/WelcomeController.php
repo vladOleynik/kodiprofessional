@@ -26,8 +26,6 @@ class WelcomeController extends Controller
 
         $url = \App\Helpers\Catalog\Categories::all();
         $products = Product::getWishlist();
-
-
         return \View::make("_partials/wishlist", ["wishlist" => $products, 'urls'=>$url['urls']]);
     }
 

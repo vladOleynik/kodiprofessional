@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/fontello-codes.css">
     <!-- Bootstrap (latest) Grid Styles Only-->
-    <link rel="stylesheet" href="css/gridonly.min.css">
-    <link rel="stylesheet" href="css/header.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="{{asset('css/gridonly.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/header.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function-->
     <script>!function (e) {
             "use strict";
