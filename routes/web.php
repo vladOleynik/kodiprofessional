@@ -31,6 +31,7 @@ Route::get('/contacts', 'StaticPagesController@contact')->name('contact');
 Route::get('/google-merchant.xml', 'HomeController@feed')->name('xml.feed');
 Route::get('/google-merchant-2.xml', 'HomeController@feed2')->name('xml.feed2');
 Route::get('/google-merchant-3.xml', 'HomeController@feed3')->name('xml.feed3');
+Route::get('/personal-cabinet', 'PersonalCabinet\IndexController@index')->name('cabinet')->middleware('auth');
 
 Route::group(['prefix' => 'shop'], function() {
     Route::post('cart/add', 'Shop\Cart@add')->name('shop.cart.add');
