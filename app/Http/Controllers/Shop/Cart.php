@@ -118,7 +118,7 @@ class Cart extends Controller
                     $order->data = $userdata['shipping'];
                     $order->status_id = OrderStatus::whereIsDefault(1)->first()->id;
                     $order->save();
-                    dispatch(new ForgetOrder($order));
+                    dispatch(new ForgetOrder($order))->delay(1);
                     $sum = 0;
                     $items = [];
                     foreach ($products as $k => $v) {
