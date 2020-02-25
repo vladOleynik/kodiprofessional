@@ -269,7 +269,7 @@
                 </div>
                 <div class="top-nav-right">
                     @if(auth()->user())
-                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My account</a>
+                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My orders</a>
                     @endif
                     <button data-popup="#popup-feedback" class="button-msg">Send message<i
                             class="fa fa-paper-plane"></i></button>
@@ -277,7 +277,7 @@
                         <a class="phone">Welcome, {{auth()->user()->name}}</a>
                         <a href="/logout" class="phone">Logout</a>
                     @else
-                        <a href="/login" class="phone">Login</a>
+                        <a href="/login" class="phone">My account</a>
                     @endif
                 </div>
             </div>
