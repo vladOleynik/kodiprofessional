@@ -28,6 +28,8 @@ class FailedPayMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.success-pay');
+        return $this
+            ->from('example@example.com')
+            ->view('mail.fail-pay');
     }
 }

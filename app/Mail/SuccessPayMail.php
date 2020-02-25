@@ -16,9 +16,11 @@ class SuccessPayMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $amount;
+
+    public function __construct($amount)
     {
-        //
+        $this->amount = $amount;
     }
 
     /**
@@ -29,6 +31,6 @@ class SuccessPayMail extends Mailable
     public function build()
     {
         return $this->from('example@example.com')
-        ->view('mail.success-pay');
+        ->view('mail.success-pay', ['amount'=>$this->amount]);
     }
 }
