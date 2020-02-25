@@ -107,7 +107,7 @@ class Cart extends Controller
             $user->phone = $userdata['phone'];
             $user->save();
         }
-		
+
         if ($products) {
             $result = \DB::transaction(function () use ($userdata, $data, $products, $user_id) {
 
@@ -143,8 +143,8 @@ class Cart extends Controller
                     unset($userdata['password']);
                     return ['return' => 'https://kodiprofessional.com/pay/return',
                         'cancel_return' => 'https://kodiprofessional.com/pay/fail', 'notify_url' => 'https://kodiprofessional.com/pay/success/'.$order->id,
-						'res' => 'success', 'items' => $items, 'amount'=>$sum, 'wb_login' => env('WB_LOGIN'),
-                        'invoice' => $order->id, 'wb_hash'=> md5(env('WB_LOGIN').env('WB_SECRET').$sum.$order->id)];
+						'res' => 'success', 'items' => $items, 'amount'=>$sum, 'wb_login' => 'H`^yPTY',
+                        'invoice' => $order->id, 'wb_hash'=> md5('litvlitantoH`^yPTY'.$sum.$order->id)];
                 } catch (Exception $ex) {
                     return ['res' => 'error', 'order_id' => 'error'];
                     \DB::rollBack();
@@ -168,9 +168,9 @@ class Cart extends Controller
 //
 //            Mail::send('ordermail', ['order' => $order], function ($message) use ($adminMail, $customerMail) {
 //
-//                $message->to($adminMail)->subject('Cообщение о заказе');
+//                $message->to($adminMail)->subject('CпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ');
 //                if (!empty($customerMail)) {
-//                    $message->to($customerMail)->subject('Cообщение о заказе');
+//                    $message->to($customerMail)->subject('CпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ');
 //                }
 //
 //
