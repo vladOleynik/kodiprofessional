@@ -36,7 +36,7 @@ class ForgetOrder implements ShouldQueue
     {
         if($this->order->payment_status!='Completed'){
             $user = OrderHelper::getUser($this->order);
-            Mail::to('oleynikprog@gmail.com')->send(new PaymentUnsuccessful());
+            Mail::to($user->email)->send(new PaymentUnsuccessful());
         }
     }
 }
