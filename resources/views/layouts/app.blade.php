@@ -77,6 +77,75 @@
                 })
             }
         }(this);</script>
+    <style>
+        .orders--list {
+            margin: 20px 0px;
+        }
+        .orders--list .olrder--list__row {
+            padding: 10px;
+            border: 1px solid  #cdcdcd;
+            border-bottom: 0px;
+            display: flex;
+        }
+        .orders--list .olrder--list__row:last-of-type {
+            border-bottom: 1px solid #cdcdcd;
+            margin-bottom: 20px;
+        }
+        .orders--list  .orders--list__title {
+            color: #030303;
+            font-size: 45px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .orders--list .order--list__cell:not(:last-of-type) {
+            border-right: 1px solid  #cdcdcd;
+        }
+        .orders--list .order--table__header {
+            background: #f8f8f8;
+            text-align: center;
+        }
+        .orders--list .order--list__cell {
+            width: 33.33333333%;
+            padding: 0px 15px;
+        }
+        .orders--list .orders--user {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .orders--list .orders--user .orders--user__photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        .orders--list .orders--user .orders--user__photo img {
+            object-fit: cover;
+        }
+        .orders--list .orders--user  .user__info--filed {
+            padding: 5px;
+            border: 1px solid #cdcdcd;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .orders--list .orders--user  .user__info--filed .field--name {
+            color: #888;
+        }
+        .orders--list .orders--user  .user__info--filed .field--res {
+            color: #e97498;
+        }
+        @media(max-width: 768px) {
+            .orders--list .order--list__cell {
+                font-size:12px;
+            }
+        }</style>
     <link rel="stylesheet" type="text/css" href="css/libs.min.css">
     <!-- Load Custom CSS Compiled without JS End-->
     <!-- Custom Browsers Color Start-->
