@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Helpers\OrderHelper;
-use App\Mail\FailedPayMail;
-use App\Mail\SuccessPayMail;
+use App\Mail\PaymentUnsuccessful;
+use App\Mail\PaymentSuccessful;
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
 use App\Models\Shop\Order;

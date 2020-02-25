@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\OrderHelper;
-use App\Mail\FailedPayMail;
-use App\Mail\SuccessPayMail;
+use App\Mail\PaymentUnsuccessful;
+use App\Mail\PaymentSuccessful;
 use App\Models\Catalog\Product;
 use App\Models\Shop\Order;
 use Illuminate\Support\Facades\Mail;
@@ -71,7 +71,7 @@ class StaticPagesController extends Controller
 
                 $amount = OrderHelper::getAmountOrder($order);
                 $user = OrderHelper::getUser($order);
-                Mail::to($user->email)->send(new SuccessPayMail($amount));
+                Mail::to($user->email)->send(new PaymentSuccessful($amount));
 
                 $login = 'kodiprofessional@kodiprofessional.com'; // замените test@domain.tld на адрес электронной почты, с которого производится отправка. Поскольку логин совпадает с адресом отправителя - данная переменная используется и как логин, и как адрес отправителя.
 
@@ -154,7 +154,7 @@ class StaticPagesController extends Controller
     public function payFail(Order $order)
     {
         $user = OrderHelper::getUser($order);
-        Mail::to($user->email)->send(new FailedPayMail());
+        Mail::to($user->email)->send(new PaymentUnsuccessful());
         return view('pay_fail');
     }
 	 public function contact() {

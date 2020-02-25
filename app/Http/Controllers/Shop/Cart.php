@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ForgetOrder;
 use App\Models\Catalog\Product;
 use App\User;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class Cart extends Controller
             foreach ($products as $k => $v) {
                 $sum += $v['price'] * $v['count'];
                 $count += $v['count'];
-                $v['url'] = \App\Helpers\Catalog\Products::buildUrl($v->meta['alias'],$urls[$v->categories[0]->id]);
+                $v['url'] = \App\Helpers\Catalog\Products::buildUrl($v->meta['alias'], $urls[$v->categories[0]->id]);
             }
 
             //      $view = \View::make("_partials/cartitem", ["products" => $products, 'urls'=>$url['urls']]);
@@ -88,8 +89,8 @@ class Cart extends Controller
             } else {
                 $pass = str_random(8);
                 $userdata['password'] = bcrypt($pass);
-                if(isset($userdata['shipping']['firstName']) && isset($userdata['shipping']['lastName'])) {
-                    $userdata['name'] = $userdata['shipping']['firstName'] . ' - ' . $userdata['shipping']['lastName'] ;
+                if (isset($userdata['shipping']['firstName']) && isset($userdata['shipping']['lastName'])) {
+                    $userdata['name'] = $userdata['shipping']['firstName'] . ' - ' . $userdata['shipping']['lastName'];
                 } else {
                     $userdata['name'] = 'anonim';
                 }
@@ -102,8 +103,8 @@ class Cart extends Controller
             $user_id = 1;
         }
 
-		 $user = auth()->user();
-        if($user && !$user->phone) {
+        $user = auth()->user();
+        if ($user && !$user->phone) {
             $user->phone = $userdata['phone'];
             $user->save();
         }
@@ -117,6 +118,7 @@ class Cart extends Controller
                     $order->data = $userdata['shipping'];
                     $order->status_id = OrderStatus::whereIsDefault(1)->first()->id;
                     $order->save();
+                    dispatch(new ForgetOrder($order));
                     $sum = 0;
                     $items = [];
                     foreach ($products as $k => $v) {
@@ -129,8 +131,8 @@ class Cart extends Controller
                             'options' => ''
                         ]);
 
-                        $items[$k] = ['item_name_'.++$k => $v->title, 'description_'.$k => $v->title,
-                            'item_number_'.$k => $v->id, 'amount_'.$k => $v->price, 'quantity_'.$k => $v->count,  'url_'.$k => $v->url];
+                        $items[$k] = ['item_name_' . ++$k => $v->title, 'description_' . $k => $v->title,
+                            'item_number_' . $k => $v->id, 'amount_' . $k => $v->price, 'quantity_' . $k => $v->count, 'url_' . $k => $v->url];
                         $sum = $sum + ($v->price * $v->count);
                         $order->details()->touch();
 
@@ -142,9 +144,9 @@ class Cart extends Controller
                     unset($userdata['shipping']);
                     unset($userdata['password']);
                     return ['return' => 'https://kodiprofessional.com/pay/return',
-                        'cancel_return' => 'https://kodiprofessional.com/pay/fail', 'notify_url' => 'https://kodiprofessional.com/pay/success/'.$order->id,
-						'res' => 'success', 'items' => $items, 'amount'=>$sum, 'wb_login' => 'litvlitanto',
-                        'invoice' => $order->id, 'wb_hash'=> md5('litvlitantoH`^yPTY'.$sum.$order->id)];
+                        'cancel_return' => 'https://kodiprofessional.com/pay/fail', 'notify_url' => 'https://kodiprofessional.com/pay/success/' . $order->id,
+                        'res' => 'success', 'items' => $items, 'amount' => $sum, 'wb_login' => 'litvlitanto',
+                        'invoice' => $order->id, 'wb_hash' => md5('litvlitantoH`^yPTY' . $sum . $order->id)];
                 } catch (Exception $ex) {
                     return ['res' => 'error', 'order_id' => 'error'];
                     \DB::rollBack();
@@ -185,7 +187,7 @@ class Cart extends Controller
 
         $result = $request->get('wb_result');
 
-        if($result && $result == 'VERIFIED') {
+        if ($result && $result == 'VERIFIED') {
             return redirect(route('index'));
         } else {
             return redirect(route('wholesale'));
