@@ -10,6 +10,8 @@ use App\Models\Shop\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Models\FundamentalSetting;
 use App\Models\StaticData\StaticPages;
+use Illuminate\Support\Facades\Log;
+
 class StaticPagesController extends Controller
 {
 
@@ -70,9 +72,10 @@ class StaticPagesController extends Controller
             if ($order->save()) {
 
                 $amount = OrderHelper::getAmountOrder($order);
+
                 $user = OrderHelper::getUser($order);
                 Mail::to($user->email)->send(new PaymentSuccessful($amount));
-
+                Log::info('amount '.$amount.' user '.$user->email);
                 $login = 'kodiprofessional@kodiprofessional.com'; // замените test@domain.tld на адрес электронной почты, с которого производится отправка. Поскольку логин совпадает с адресом отправителя - данная переменная используется и как логин, и как адрес отправителя.
 
                 $password = 'Ojn5752zGRsO';  // Замените 'password' на пароль от почтового ящика, с которого производится отправка.

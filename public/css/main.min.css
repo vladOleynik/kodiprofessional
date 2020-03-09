@@ -5129,6 +5129,7 @@
 .orders--list .orders--user  .user__info--filed .field--res {
     color: #e97498;
 }
+
 @media(max-width: 768px) {
     .orders--list .order--list__cell {
         font-size:12px;

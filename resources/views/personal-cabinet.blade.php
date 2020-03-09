@@ -34,7 +34,7 @@
                             <div class="order--list__cell ">
                                 <ul>
                                     @foreach($order->details as $detail)
-                                    <li>{{$detail->product->title}}</li>
+                                    <li class="item-product">{{$detail->product->title}}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -52,14 +52,14 @@
                             <div class="order--list__cell ">
                                 <ul>
                                     @foreach($order->details as $detail)
-                                        <li>{{$detail->price}} $</li>
+                                        <li class="item-product">{{$detail->price}} $</li>
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="order--list__cell ">
                                 <ul>
                                     @foreach($order->details as $detail)
-                                        <li>{{$detail->qty}} pс.</li>
+                                        <li class="item-product">{{$detail->qty}} pс.</li>
                                     @endforeach
                                 </ul>
                             </div>

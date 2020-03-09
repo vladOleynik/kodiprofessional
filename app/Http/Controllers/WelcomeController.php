@@ -10,6 +10,7 @@ use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
 use App\Models\Shop\Order;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class WelcomeController extends Controller
 {

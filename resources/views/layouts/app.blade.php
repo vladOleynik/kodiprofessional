@@ -145,7 +145,12 @@
             .orders--list .order--list__cell {
                 font-size:12px;
             }
-        }</style>
+
+        }
+        .item-product {
+         margin-bottom: 40px;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="css/libs.min.css">
     <!-- Load Custom CSS Compiled without JS End-->
     <!-- Custom Browsers Color Start-->
