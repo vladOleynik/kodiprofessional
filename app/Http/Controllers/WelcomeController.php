@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\OrderHelper;
 use App\Mail\PaymentUnsuccessful;
-use App\Mail\PaymentSuccessful;
+use App\Mail\RegisterData;
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
 use App\Models\Shop\Order;

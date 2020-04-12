@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Mail\RegisterData;
+use Illuminate\Support\Facades\Mail;
 use App\Jobs\ForgetOrder;
 use App\Models\Catalog\Product;
 use App\User;
@@ -10,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\Shop\Order;
 use App\Models\Shop\OrderStatus;
 use App\Models\FundamentalSetting;
+use Illuminate\Support\Facades\Log;
 
 class Cart extends Controller
 {
@@ -82,12 +85,12 @@ class Cart extends Controller
         if (auth()->user()) {
             $user_id = auth()->user()->id;
         } elseif ($userdata['email']) {
-
             $user = User::whereEmail($userdata['email'])->first();
             if ($user) {
                 $user_id = $user->id;
             } else {
                 $pass = str_random(8);
+                Mail::to($userdata['email'])->send(new RegisterData($pass, $userdata['email']));
                 $userdata['password'] = bcrypt($pass);
                 if (isset($userdata['shipping']['firstName']) && isset($userdata['shipping']['lastName'])) {
                     $userdata['name'] = $userdata['shipping']['firstName'] . ' - ' . $userdata['shipping']['lastName'];
@@ -118,7 +121,7 @@ class Cart extends Controller
                     $order->data = $userdata['shipping'];
                     $order->status_id = OrderStatus::whereIsDefault(1)->first()->id;
                     $order->save();
-                    dispatch(new ForgetOrder($order))->delay(now()->addMinutes(15));
+                    dispatch(new ForgetOrder($order))->delay(now()->addMinutes(60));
                     $sum = 0;
                     $items = [];
                     foreach ($products as $k => $v) {
