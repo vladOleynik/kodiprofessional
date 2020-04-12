@@ -18,15 +18,11 @@ class Category extends Model
 
     public function meta()
     {
-
         return $this->hasOne(\App\Models\Meta::class, 'data_id')->where('type', self::TYPE);
     }
 
     public function products()
     {
-
         return $this->belongsToMany('App\Models\Catalog\Product');
     }
-
-
 }
