@@ -33,6 +33,8 @@ class SenderAdmin extends Mailable implements ShouldQueue
     {
         $emailUser = $this->emailUser;
         $details = $this->order->details;
-        return $this->from('example@example.com')->view('mail.sender-to-admin-order-success', compact('emailUser', 'details'));
+        return $this
+            ->from('salekodiprofessional@gmail.com')
+            ->view('mail.sender-to-admin-order-success', compact('emailUser', 'details'));
     }
 }

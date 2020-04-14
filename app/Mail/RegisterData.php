@@ -13,6 +13,7 @@ class RegisterData extends Mailable implements ShouldQueue
 
     private $login;
     private $password;
+
     /**
      * Create a new message instance.
      *
@@ -31,7 +32,8 @@ class RegisterData extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from('example@example.com')
-        ->view('mail.register-data', ['login'=>$this->login, 'password'=>$this->password]);
+        return $this
+            ->from('salekodiprofessional@gmail.com')
+            ->view('mail.register-data', ['login' => $this->login, 'password' => $this->password]);
     }
 }

@@ -30,7 +30,8 @@ class PaymentSuccessful extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from('example@example.com')
-        ->view('mail.success-pay', ['amount'=>$this->amount]);
+        return $this
+            ->from('salekodiprofessional@gmail.com')
+            ->view('mail.success-pay', ['amount' => $this->amount]);
     }
 }

@@ -29,7 +29,7 @@ class PaymentUnsuccessful extends Mailable implements ShouldQueue
     public function build()
     {
         return $this
-            ->from('example@example.com')
+            ->from('salekodiprofessional@gmail.com')
             ->view('mail.fail-pay');
     }
 }
