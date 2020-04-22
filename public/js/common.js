@@ -216,6 +216,7 @@ $('.menu-button-mobile').click(function(event) {
     
   }
   else{
+    //comment for
     if($('#mobileOptionalMenu').css('display')==='none'){
       $('#mobileOptionalMenu').css('display','block');
     }else{
