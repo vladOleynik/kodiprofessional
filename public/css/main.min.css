@@ -244,7 +244,8 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 1.125em;
-    font-weight: 600
+    font-weight: 600;
+    margin-top: 15%;
 }
 
 .pages-list-mobile li a {

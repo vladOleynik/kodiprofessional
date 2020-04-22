@@ -34,17 +34,20 @@
                             <div class="order--list__cell ">
                                 <ul>
                                     @foreach($order->details as $detail)
-                                    <li class="item-product">{{$detail->product->title}}</li>
+                                    <li class="item-product">{{optional($detail->product)->title}}</li>
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="order--list__cell ">
                                 <ul>
+
                                     @foreach($order->details as $detail)
                                         <li>
-                                            @foreach($detail->product->images as $image)
-                                            <img src="{{asset($image)}}" alt="" width="50px">
-                                            @endforeach
+                                            @if(isset($detail->product->images))
+                                                @foreach($detail->product->images as $image)
+                                                <img src="{{asset($image)}}" alt="" width="50px">
+                                                @endforeach
+                                            @endif
                                         </li>
                                     @endforeach
                                 </ul>
