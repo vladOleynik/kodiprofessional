@@ -885,7 +885,7 @@
     var scr = {
         "scripts": [
             {"src": "js/libs.min.js", "async": false},
-            {"src": "js/common.js", "async": false}
+            {"src": "js/common1.js", "async": false}
         ]
     };
     !function (t, n, r) {
