@@ -165,6 +165,7 @@ class Orders extends AppAdminSection implements Initializable
             AdminColumn::text('id', 'ID')->setWidth(50),
             AdminColumn::text('user.name', 'Имя')->setWidth(50),
             AdminColumn::text('user.email', 'Почта')->setWidth(50),
+            AdminColumn::datetime('time_set_delivery', 'Время отправки заказа')->setWidth(50),
             AdminColumn::custom('Сумма заказа', function ($model) {
                 $sum = 0;
                 foreach ($model->details as $v) {
