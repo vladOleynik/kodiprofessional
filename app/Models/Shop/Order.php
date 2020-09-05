@@ -56,5 +56,8 @@ class Order extends Model
         return optional($this->wb_request)->payment_status;
     }
 
-
+    public function getAmountOrderAttribute()
+    {
+        return number_format($this->details->pluck('price')->sum(), 2, '.', '');
+    }
 }

@@ -1,3 +1,7 @@
+<?php
+use \App\Helpers\Catalog\Products;
+
+?>
 @extends('layouts.app')
 @section('content')
     <div class="container">
@@ -66,7 +70,32 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="order--list__cell">{{$order->payment_status}}</div>
+                            <div class="order--list__cell">
+                                {{$order->payment_status}}
+                                @if($order->payment_status!='Completed')
+                                    <form action="https://shop.westernbid.info" method="post">
+                                       <input type="hidden" name="wb_hash" value="{{ md5('litvlitantoH`^yPTY' . $order->amountOrder. $order->id) }}">
+                                       <input type="hidden" name="wb_login" value="litvlitanto">
+                                       <input type="hidden" name="invoice" value="{{$order->id}}">
+                                       <input type="hidden" name="amount" value="{{$order->amountOrder}}">
+                                       <input type="hidden" name="return" value="https://kodiprofessional.com/pay/return">
+                                       <input type="hidden" name="cancel_return" value="https://kodiprofessional.com/pay/fail">
+                                       <input type="hidden" name="notify_url" value="https://kodiprofessional.com/pay/success/{{$order->id}}">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        @foreach($order->details as $key => $detail)
+{{--                                            western bid не принимает названия инпутов с нулем в конце--}}
+                                            @php $numberItem  = $key+1 @endphp
+                                            <input type="hidden" name="item_name_{{$numberItem}}" value="{{optional($detail->product)->title ?? 'product'.optional($detail->product)->id}}">
+                                            <input type="hidden" name="description_{{$numberItem}}" value="{{optional($detail->product)->title ?? 'product'.optional($detail->product)->id}}">
+                                            <input type="hidden" name="item_number_{{$numberItem}}" value="{{optional($detail->product)->id}}">
+                                            <input type="hidden" name="amount_{{$numberItem}}" value="{{$detail->price}}">
+                                            <input type="hidden" name="quantity_{{$numberItem}}" value="{{$detail->qty}}">
+                                            <input type="hidden" name="url_{{$numberItem}}" value="{{Products::buildUrl(optional($detail->product)->meta['alias'], optional($detail->product)->categories[0] ? optional($detail->product)->categories[0]->id : 0)}}">
+                                        @endforeach
+                                        <input type="submit"  class="btn btn-primary" value="Pay">
+                                    </form>
+                                @endif
+                            </div>
                         </div>
                         @endforeach
                     </div>
