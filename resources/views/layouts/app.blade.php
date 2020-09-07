@@ -911,6 +911,7 @@
 <script src="js/laroute.js"></script>
 <script src="js/main.js"></script>
 <script src="js/common.js"></script>
+<script src="{{asset('/js/discount-product.js')}}"></script>
 <!-- Optimized loading JS End-->
 </body>
 </html>

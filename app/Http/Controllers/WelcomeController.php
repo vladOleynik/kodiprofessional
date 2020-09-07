@@ -19,7 +19,6 @@ class WelcomeController extends Controller
     public function index() {
         $categories = Category::where('data->main', true)->wherePublished(1)->with('meta')->take(9)->orderBy('data->number')->get();
         $url = \App\Helpers\Catalog\Categories::all();
-        dd();
         return view('welcome', ['categories' => $categories, 'urls' => $url['urls'] ]);
     }
 
