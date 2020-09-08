@@ -6,6 +6,32 @@ use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Sliders\Images;
 
+/**
+ * App\Models\Sliders\Table
+ *
+ * @property int $id
+ * @property string $alias
+ * @property string $title
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Sliders\Images[] $images
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table newQuery()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Sliders\Table onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table query()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereAlias($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sliders\Table whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Sliders\Table withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Sliders\Table withoutTrashed()
+ * @mixin \Eloquent
+ */
 class Table extends Model {
 
     use SoftDeletes;

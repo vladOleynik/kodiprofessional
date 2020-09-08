@@ -14,7 +14,7 @@ class AddColumnToProduct extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('discount')->default(null);
+            $table->string('discount')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnToProduct extends Migration
     public function down()
     {
         Schema::table('product', function (Blueprint $table) {
-            //
+            $table->dropColumn('discount');
         });
     }
 }

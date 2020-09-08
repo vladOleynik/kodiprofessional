@@ -13,7 +13,11 @@ use \App\Helpers\Catalog\Products;
                     <span class="orders--list__title">Product Discount</span>
                     <input type="number" id="countDiscount" placeholder="Введите скидку %"
                            style="border: 1px solid black; border-radius: 5px" value="{{session('discount')}}"><br>
-                    <input type="button" value="Сохранить скидку" id="saveDiscountAmount"><br>
+                    <input type="button" value="Сохранить скидку" id="saveDiscountAmount"><br><br>
+                    <hr>
+                    <span>Начните писать название продукта для поиска</span><br><br>
+                    <input type="text" id="findProduct" placeholder="Поле ввода имени продукта для поиска"  style="border: 1px solid black; border-radius: 5px">
+                    <hr>
                     <div class="orders--user">
                         <div class="orders--user__info">
                             <input type="button" id="applyDiscount" value="Применить скидку к выбранным товарам"><br>
@@ -49,13 +53,17 @@ use \App\Helpers\Catalog\Products;
                                         {{$product->price}}
                                     </div>
                                     <div class="order--list__cell ">
-                                        <input type="button" class="itemForDiscount" data-item_id="{{$product->id}}" value="Применить скидку">
+                                        @if($product->discount)
+                                            {{$product->discount}} %
+                                        @else
+                                            Скидка не установлена
+                                        @endif
                                     </div>
 
                                 </div>
                             @endforeach
+                                {{ $products->links() }}
                         </form>
-                        {{ $products->links() }}
                     </div>
                 </div>
             </div>
