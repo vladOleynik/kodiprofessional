@@ -503,7 +503,7 @@
                                                 </div>
                                                 <div class="product-price">
                                                     @if($v->old_price)
-                                                        <div class="old-price strike dollar">{{$v->old_price}}</div>
+                                                        <div class="old-price strike dollar">{{$v->old_price}} @if($v->discount) - {{$v->discount}} %@endif </div>
                                                     @endif
                                                     <div class="price dollar">{{$v->price}}</div>
                                                 </div>
@@ -716,7 +716,7 @@
                                                     <div data-count="1000" class="product-name">{{$v->title}}</div>
                                                     <div class="product-price">
                                                         @if($v->old_price)
-                                                            <div class="old-price strike dollar">{{$v->old_price}}</div>
+                                                            <div class="old-price strike dollar">{{$v->old_price}}</div>@if($v->discount) - {{$v->discount}} %@endif
                                                         @endif
                                                         <div class="price dollar">{{$v->price}}</div>
                                                     </div>

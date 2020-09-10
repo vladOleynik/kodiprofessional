@@ -9,7 +9,7 @@
         <div class="card-bottom">
             <div class="card-prices">
                @if($item->old_price)
-                    <div class="old-price strike accent dollar">{{$item->old_price}}</div>
+                    <div class="old-price strike accent dollar">{{$item->old_price}}</div>@if($item->discount) - {{$item->discount}} %@endif
                @endif
                 <div class="price dollar">{{$item->price}}</div>
             </div>

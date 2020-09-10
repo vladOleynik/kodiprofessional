@@ -34,6 +34,7 @@
                                             @if(in_array($data->id,$wishlist))remove from favorites @else add to favorites @endif</button>
                                         <div class="h3 card-info-price dollar">{{$data->price}}</div>
                                         @if($data->old_price)
+                                            @if($data->discount) - {{$data->discount}} %@endif
                                             <p class="card-info-price-regular strike dollar">{{$data->old_price}}</p>
                                         @endif
                                         <div data-max-count="1000" class="count-block -single">
