@@ -83,6 +83,7 @@ $('.open-mobile-menu .menu-item-has-children').click(function(event) {
   $(this).addClass('active');
   $(this).find('.sub-menu').eq(0).addClass('current').customScroll();
   $('.menu-button-mobile').addClass('open-sub');
+  // $('.root-list').hide();
 });
 
 $('.pages-list-mobile').click(function(event) {
@@ -98,7 +99,7 @@ function changeCart(state = 'cart'){
     $('.basket-container-main-change .fav-change').animate({'margin-left': '-100%', opacity: '0'}, 800/*, function(){$(this).hide()}*/).hide().removeClass('current');
     $('.basket-container-main-change .basket-change').animate({'margin-left': '0%', opacity: '1'}, 300).show().addClass('current');
     $('.basket-container-main-change .basket-change').scrollTop(0);
-    
+
     // $('.custom-scroll-block').customScroll({
     //   offsetTop: 0,
     //   offsetBottom: 0,
@@ -118,7 +119,7 @@ function changeCart(state = 'cart'){
     //   trackWidth: 5,
     // });
   }
-  
+
 }
 
 function openCart(state = 'cart'){
@@ -149,7 +150,7 @@ $('.mobile-menu .top-panel-right button').click(function(event) {
       openCart();
     }
     $('.top-panel').addClass('opened');
-    
+
   }
   else{
     $('.mobile-menu .top-panel-right button').removeClass('opened');
@@ -212,8 +213,8 @@ $('.menu-button-mobile').click(function(event) {
       $('.pages-list-mobile').find('.current').eq(_level-1).removeClass('current');
     }
 
-    
-    
+
+
   }
   else{
     //comment for
@@ -225,7 +226,7 @@ $('.menu-button-mobile').click(function(event) {
     $('.menu-button-mobile,.open-mobile-menu').toggleClass('opened');
     $('body').toggleClass('lock-body');
   }
-  
+$('.root-list').show();
 });
 // ��� ��������
 $('.main-menu-button').click(function(event) {
@@ -257,19 +258,19 @@ $('.tabs-panel li').click(function(event) {
 
 // ��� CF7
 document.addEventListener( 'wpcf7submit', function( event ) {
-  
+
 }, false );
 
 var body = document.body,
     timer;
-    
+
 // ��� ������� ������������������ ��� �������
 window.addEventListener('scroll', function() {
   clearTimeout(timer);
   if(!body.classList.contains('disable-hover')) {
     body.classList.add('disable-hover')
   }
-  
+
   timer = setTimeout(function(){
     body.classList.remove('disable-hover')
   },500);
@@ -354,7 +355,7 @@ $('.language-select li').click(function(event) {
     var _index = $(this).index();
     $('.language-select li').removeClass('current');
     $(this).addClass('current').closest('.language-select').attr('data-lang', $(this).text());
-  
+
     $('.sending-block-text-change').slideUp('fast');
     $('.sending-block-text-change').eq(_index).slideDown('fast');
   }

@@ -18,8 +18,15 @@
                     <div class="single-block-main">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
-                                <div class="single-block-main-thumb">
-                                    <div class="img"><img src="{{$data['images'][0]}}" alt="thumb"></div>
+                                <div class="single-block-main-thumb slider-for">
+                                    @foreach($data['images'] as $image)
+                                        <div class="img"><img src="{{$image}}" alt="image"></div>
+                                    @endforeach
+                                </div>
+                                <div class="slider-nav">
+                                    @foreach($data['images'] as $image)
+                                        <div class="col-md-3 "><img src="{{$image}}" alt="image"></div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -82,6 +89,4 @@
                 </div>
             </div>
         </section>
-
-
 @endsection

@@ -5,6 +5,7 @@
                 <div class="product"><a
                         href="{{\App\Helpers\Catalog\Products::buildUrl($v->meta['alias'],$urls[$v->categories[0]->id])}}"
                         class="product-thumb">
+
                         <img src="{{$v->images[0]}}"
                              alt=""></a>
                     <div class="text">

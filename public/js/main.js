@@ -17,7 +17,7 @@ e.preventDefault();
             let count = $('.cart-count').text() || 1;
             let product_id = $(this).attr('data-product_id');
             addCart(product_id, count);
-           
+
     });
 
     //REMOVE PRODUCT
@@ -248,6 +248,21 @@ e.preventDefault();
 
         closePopup($(this));
 
-    })
+    });
 
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
 });

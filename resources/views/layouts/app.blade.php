@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{asset('css/gridonly.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/header.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function-->
     <script>!function (e) {
             "use strict";
@@ -910,6 +912,8 @@
 <script src="js/libs.min.js"></script>
 <script src="js/laroute.js"></script>
 <script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous"></script>
+
 <script src="js/common.js"></script>
 <script src="{{asset('/js/discount-product.js')}}"></script>
 <!-- Optimized loading JS End-->

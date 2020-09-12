@@ -25,10 +25,10 @@ use App\Models\Catalog\ProductDiscountModel;
 return [
 
 
-//    (new Page(ProductDiscountModel::class)) ->setPriority(100)
-//        ->setIcon('fa-apple-alt ')
-//        ->setTitle('Скидки на товары'),
-//        ->setUrl('discount-product'),
+    (new Page()) ->setPriority(100)
+        ->setIcon('fa-apple-alt ')
+        ->setTitle('Скидки на товары')
+        ->setUrl('/product-discount'),
      [
 //        'title' => 'Content',
 
