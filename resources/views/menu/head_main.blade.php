@@ -6,7 +6,7 @@
             @else
                 <li class="menu-item-has-children"><a
                             @if(!$item['children']) href="{{ $items['urls'][$item->meta->data_id]}}" @endif>{{$item->title}}</a>
-                    <div class="sub-menu">
+                    <div class="sub-menu" style="top:10px;">
                         <ul>
                             @foreach($item['children'] as $child)
                                 @include('menu.head_childs', $child)
