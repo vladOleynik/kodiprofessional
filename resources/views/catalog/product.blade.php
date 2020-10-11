@@ -42,7 +42,9 @@
                                 @if(count($data['images'])>1)
                                     <div class="slider-nav">
                                         @foreach($data['images'] as $image)
-                                            <div class="col-md-3 "><img src="{{$image}}" alt="image"></div>
+                                            <div class="col-sm-1 image-group-product" style="border-radius: 10px;">
+                                                <img src="{{$image}}" alt="" height="50" width="50">
+                                            </div>
                                         @endforeach
                                     </div>
                                 @endif
