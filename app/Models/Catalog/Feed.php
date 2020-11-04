@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\DB;
 //для версии 5.2 и ранее:
 //use DB;
 use App\Http\Controllers\Controller;
+/**
+ * App\Models\Catalog\Feed
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Feed newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Feed newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Feed query()
+ * @mixin \Eloquent
+ */
 class Feed extends Model
 {
     static function getXMLFeedData()

@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/fontello-codes.css">
     <!-- Bootstrap (latest) Grid Styles Only-->
-    <link rel="stylesheet" href="css/gridonly.min.css">
-    <link rel="stylesheet" href="css/header.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="{{asset('css/gridonly.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/header.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function-->
     <script>!function (e) {
             "use strict";
@@ -77,6 +79,80 @@
                 })
             }
         }(this);</script>
+    <style>
+        .orders--list {
+            margin: 20px 0px;
+        }
+        .orders--list .olrder--list__row {
+            padding: 10px;
+            border: 1px solid  #cdcdcd;
+            border-bottom: 0px;
+            display: flex;
+        }
+        .orders--list .olrder--list__row:last-of-type {
+            border-bottom: 1px solid #cdcdcd;
+            margin-bottom: 20px;
+        }
+        .orders--list  .orders--list__title {
+            color: #030303;
+            font-size: 45px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .orders--list .order--list__cell:not(:last-of-type) {
+            border-right: 1px solid  #cdcdcd;
+        }
+        .orders--list .order--table__header {
+            background: #f8f8f8;
+            text-align: center;
+        }
+        .orders--list .order--list__cell {
+            width: 33.33333333%;
+            padding: 0px 15px;
+        }
+        .orders--list .orders--user {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .orders--list .orders--user .orders--user__photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        .orders--list .orders--user .orders--user__photo img {
+            object-fit: cover;
+        }
+        .orders--list .orders--user  .user__info--filed {
+            padding: 5px;
+            border: 1px solid #cdcdcd;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .orders--list .orders--user  .user__info--filed .field--name {
+            color: #888;
+        }
+        .orders--list .orders--user  .user__info--filed .field--res {
+            color: #e97498;
+        }
+        @media(max-width: 768px) {
+            .orders--list .order--list__cell {
+                font-size:12px;
+            }
+
+        }
+        .item-product {
+         margin-bottom: 40px;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="css/libs.min.css">
     <!-- Load Custom CSS Compiled without JS End-->
     <!-- Custom Browsers Color Start-->
@@ -100,6 +176,14 @@
 <meta name="google-site-verification" content="JOqLN92S-8qTq7ZLWWMjOJIr0Xrzg_E-SyixuR-MoLQ" />
 </head>
 <body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MFHKT9V');
+</script>
+<!-- End Google Tag Manager -->
 <!-- NavMenus start-->
 <div class="menu-button-mobile">
     <div class="menu-icon">
@@ -195,17 +279,20 @@
                         <li><a href="{{route('wholesale')}}">Wholesale Prices</a></li>
                         <li><a href="{{route('shipping')}}">Shiping and Payments</a></li>
                         <li><a href="{{route('purchase')}}">Purchase returns</a></li>
-						<li><a href="{{route('contact')}}">Contacts</a></li> 
+						<li><a href="{{route('contact')}}">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="top-nav-right">
+                    @if(auth()->user())
+                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My orders</a>
+                    @endif
                     <button data-popup="#popup-feedback" class="button-msg">Send message<i
                             class="fa fa-paper-plane"></i></button>
                     @if(auth()->user())
                         <a class="phone">Welcome, {{auth()->user()->name}}</a>
                         <a href="/logout" class="phone">Logout</a>
                     @else
-                        <a href="/login" class="phone">Login</a>
+                        <a href="/login" class="phone">My account</a>
                     @endif
                 </div>
             </div>
@@ -426,7 +513,7 @@
                                                 </div>
                                                 <div class="product-price">
                                                     @if($v->old_price)
-                                                        <div class="old-price strike dollar">{{$v->old_price}}</div>
+                                                        <div class="old-price strike dollar">{{$v->old_price}} @if($v->discount) - {{$v->discount}} %@endif </div>
                                                     @endif
                                                     <div class="price dollar">{{$v->price}}</div>
                                                 </div>
@@ -639,7 +726,7 @@
                                                     <div data-count="1000" class="product-name">{{$v->title}}</div>
                                                     <div class="product-price">
                                                         @if($v->old_price)
-                                                            <div class="old-price strike dollar">{{$v->old_price}}</div>
+                                                            <div class="old-price strike dollar">{{$v->old_price}}</div>@if($v->discount) - {{$v->discount}} %@endif
                                                         @endif
                                                         <div class="price dollar">{{$v->price}}</div>
                                                     </div>
@@ -792,7 +879,6 @@
 
                                 <div class="col-md-8">
                                     <div class="col-md-4 tac flr"><input type="submit" value="Confirm order" class="button"></div>
-
                                     <div class="ssl-logo"><img src="img/icons/ssl-logo.png" alt=""></div>
                                 </div>
                             </div>
@@ -809,7 +895,7 @@
     var scr = {
         "scripts": [
             {"src": "js/libs.min.js", "async": false},
-            {"src": "js/common.js", "async": false}
+            {"src": "js/common1.js", "async": false}
         ]
     };
     !function (t, n, r) {
@@ -834,6 +920,10 @@
 <script src="js/libs.min.js"></script>
 <script src="js/laroute.js"></script>
 <script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous"></script>
+
+<script src="js/common.js"></script>
+<script src="{{asset('/js/discount-product.js')}}"></script>
 <!-- Optimized loading JS End-->
 </body>
 </html>

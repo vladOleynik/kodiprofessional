@@ -31,7 +31,12 @@ Route::get('/contacts', 'StaticPagesController@contact')->name('contact');
 Route::get('/google-merchant.xml', 'HomeController@feed')->name('xml.feed');
 Route::get('/google-merchant-2.xml', 'HomeController@feed2')->name('xml.feed2');
 Route::get('/google-merchant-3.xml', 'HomeController@feed3')->name('xml.feed3');
-
+Route::get('/personal-cabinet', 'PersonalCabinet\IndexController@index')->name('cabinet')->middleware('auth');
+Route::get('/product-discount', 'ProductDiscount@getListProducts')->middleware('auth','admin');
+Route::post('/save-discount', 'ProductDiscount@saveDiscount')->middleware('auth','admin')->name('saveDiscount');
+Route::post('/find-product', 'ProductDiscount@getProductByTitle')->middleware('auth','admin');
+Route::post('/save-dicsount', 'ProductDiscount@setDiscount')->middleware('auth','admin');
+Route::post('/remove-dicsount', 'ProductDiscount@setDiscount')->middleware('auth','admin');
 Route::group(['prefix' => 'shop'], function() {
     Route::post('cart/add', 'Shop\Cart@add')->name('shop.cart.add');
     Route::post('cart/delete', 'Shop\Cart@delete')->name('shop.cart.delete');

@@ -10,7 +10,7 @@
 
 .mobile-menu .top-panel {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0,rwww.win2.cn/g9 0, 0, .2);
     position: absolute;
     left: 0;
     top: 0;
@@ -244,7 +244,8 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 1.125em;
-    font-weight: 600
+    font-weight: 600;
+    margin-top: 15%;
 }
 
 .pages-list-mobile li a {
@@ -5065,3 +5066,75 @@
         font-size: .75em
     }
 }
+
+.orders--list {
+    margin: 20px 0px;
+}
+.orders--list .olrder--list__row {
+    padding: 10px;
+    border: 1px solid  #cdcdcd;
+    border-bottom: 0px;
+    display: flex;
+}
+.orders--list .olrder--list__row:last-of-type {
+    border-bottom: 1px solid #cdcdcd;
+    margin-bottom: 20px;
+}
+.orders--list  .orders--list__title {
+    color: #030303;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+.orders--list .order--list__cell:not(:last-of-type) {
+    border-right: 1px solid  #cdcdcd;
+}
+.orders--list .order--table__header {
+    background: #f8f8f8;
+    text-align: center;
+}
+.orders--list .order--list__cell {
+    width: 33.33333333%;
+    padding: 0px 15px;
+}
+.orders--list .orders--user {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.orders--list .orders--user .orders--user__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.orders--list .orders--user .orders--user__photo img {
+    object-fit: cover;
+}
+.orders--list .orders--user  .user__info--filed {
+    padding: 5px;
+    border: 1px solid #cdcdcd;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+
+}
+
+.orders--list .orders--user  .user__info--filed .field--name {
+    color: #888;
+}
+.orders--list .orders--user  .user__info--filed .field--res {
+    color: #e97498;
+}
+
+@media(max-width: 768px) {
+    .orders--list .order--list__cell {
+        font-size:12px;
+    }
+}
+
+/*css finish  ------finish*/

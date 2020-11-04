@@ -9,7 +9,7 @@
                         @if($v->old_price)
                             <div class="old-price strike dollar">{{$v->old_price}}</div>
                         @endif
-                        <div class="price dollar">{{$v->price}}</div>
+                        <div class="price dollar">@if($v->discount) - {{$v->discount}} %@endif {{$v->price}}</div>
                     </div>
                     <div class="product-count">
                         <div data-max-count="100500" class="count-block -order">

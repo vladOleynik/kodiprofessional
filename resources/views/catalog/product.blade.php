@@ -1,5 +1,21 @@
 @extends('layouts.app')
 @section('content')
+    <style>
+        .img-huege {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100% !important;
+
+        }
+
+        .slick-list .slick-track .slick-slide > div {
+            height: 100% !important;
+        }
+        .slick-list, .slick-track, .slick-slide{
+            height: 100% !important;
+        }
+    </style>
     <div class="body-site-wrapper">
         <section class="section single-section gray-section">
             <div class="container">
@@ -18,9 +34,20 @@
                     <div class="single-block-main">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
-                                <div class="single-block-main-thumb">
-                                    <div class="img"><img src="{{$data['images'][0]}}" alt="thumb"></div>
+                                <div class="single-block-main-thumb slider-for">
+                                    @foreach($data['images'] as $image)
+                                        <div class="img img-huege" style=""><img src="{{$image}}" alt="image"></div>
+                                    @endforeach
                                 </div>
+                                @if(count($data['images'])>1)
+                                    <div class="slider-nav">
+                                        @foreach($data['images'] as $image)
+                                            <div class="col-sm-1 image-group-product" style="border-radius: 10px;">
+                                                <img src="{{$image}}" alt="" height="50" width="50">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="single-block-main-info">
@@ -30,10 +57,13 @@
                                         <div class="h6 card-info-sending-desc">Free and fast international shipping
                                             anywhere in the world
                                         </div>
-                                        <button data-product_id="{{$data->id}}" class="@if(in_array($data->id,$wishlist)) -added @endif  wish-{{$data->id}} button-add-to-favorites -big">
-                                            @if(in_array($data->id,$wishlist))remove from favorites @else add to favorites @endif</button>
+                                        <button data-product_id="{{$data->id}}"
+                                                class="@if(in_array($data->id,$wishlist)) -added @endif  wish-{{$data->id}} button-add-to-favorites -big">
+                                            @if(in_array($data->id,$wishlist))remove from favorites @else add to
+                                            favorites @endif</button>
                                         <div class="h3 card-info-price dollar">{{$data->price}}</div>
                                         @if($data->old_price)
+                                            @if($data->discount) - {{$data->discount}} %@endif
                                             <p class="card-info-price-regular strike dollar">{{$data->old_price}}</p>
                                         @endif
                                         <div data-max-count="1000" class="count-block -single">
@@ -41,7 +71,8 @@
                                             <div class="count cart-count">1</div>
                                             <button class="button-inc"></button>
                                         </div>
-                                        <a href="" data-product_id="{{$data->id}}" data-href="{{route('shop.cart.order')}}"
+                                        <a href="" data-product_id="{{$data->id}}"
+                                           data-href="{{route('shop.cart.order')}}"
                                            class="button card-info-button-cart">add to cart</a>
                                     </div>
                                 </div>
@@ -81,6 +112,4 @@
                 </div>
             </div>
         </section>
-
-
 @endsection

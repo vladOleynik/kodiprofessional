@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Shop\Order;
+use App\Observers\ShopOrdersObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Models\StaticData\StaticTexts;
 
@@ -17,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->bootStaticText();
+        Order::observe(ShopOrdersObserver::class);
     }
 
     /**

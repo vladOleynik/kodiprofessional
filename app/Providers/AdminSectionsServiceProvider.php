@@ -6,7 +6,7 @@ use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
 
 class AdminSectionsServiceProvider extends ServiceProvider
 {
-    
+
     protected $widgets = [
             \App\Admin\Widgets\NavigationUserBlock::class
     ];
@@ -39,7 +39,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     public function boot(\SleepingOwl\Admin\Admin $admin)
     {
-    	
+
         $widgetsRegistry = $this->app[\SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface::class];
 
         foreach ($this->widgets as $widget) {
