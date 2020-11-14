@@ -23,8 +23,12 @@
     <link rel="stylesheet" href="{{asset('css/header.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/add_styles.min.css')}}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+          integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+          integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+          crossorigin="anonymous"/>
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function-->
     <script>!function (e) {
             "use strict";
@@ -84,17 +88,20 @@
         .orders--list {
             margin: 20px 0px;
         }
+
         .orders--list .olrder--list__row {
             padding: 10px;
-            border: 1px solid  #cdcdcd;
+            border: 1px solid #cdcdcd;
             border-bottom: 0px;
             display: flex;
         }
+
         .orders--list .olrder--list__row:last-of-type {
             border-bottom: 1px solid #cdcdcd;
             margin-bottom: 20px;
         }
-        .orders--list  .orders--list__title {
+
+        .orders--list .orders--list__title {
             color: #030303;
             font-size: 45px;
             font-weight: 700;
@@ -102,22 +109,27 @@
             margin-bottom: 20px;
             display: block;
         }
+
         .orders--list .order--list__cell:not(:last-of-type) {
-            border-right: 1px solid  #cdcdcd;
+            border-right: 1px solid #cdcdcd;
         }
+
         .orders--list .order--table__header {
             background: #f8f8f8;
             text-align: center;
         }
+
         .orders--list .order--list__cell {
             width: 33.33333333%;
             padding: 0px 15px;
         }
+
         .orders--list .orders--user {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
+
         .orders--list .orders--user .orders--user__photo {
             width: 100px;
             height: 100px;
@@ -125,10 +137,12 @@
             overflow: hidden;
             margin-right: 20px;
         }
+
         .orders--list .orders--user .orders--user__photo img {
             object-fit: cover;
         }
-        .orders--list .orders--user  .user__info--filed {
+
+        .orders--list .orders--user .user__info--filed {
             padding: 5px;
             border: 1px solid #cdcdcd;
             width: 100%;
@@ -138,20 +152,23 @@
 
         }
 
-        .orders--list .orders--user  .user__info--filed .field--name {
+        .orders--list .orders--user .user__info--filed .field--name {
             color: #888;
         }
-        .orders--list .orders--user  .user__info--filed .field--res {
+
+        .orders--list .orders--user .user__info--filed .field--res {
             color: #e97498;
         }
-        @media(max-width: 768px) {
+
+        @media (max-width: 768px) {
             .orders--list .order--list__cell {
-                font-size:12px;
+                font-size: 12px;
             }
 
         }
+
         .item-product {
-         margin-bottom: 40px;
+            margin-bottom: 40px;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="css/libs.min.css">
@@ -164,25 +181,37 @@
     <!-- iOS Safari-->
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <!-- Custom Browsers Color End 222-->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139025536-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139025536-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-139025536-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<meta name="google-site-verification" content="JOqLN92S-8qTq7ZLWWMjOJIr0Xrzg_E-SyixuR-MoLQ" />
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139025536-1');
+    </script>
+
+    <meta name="google-site-verification" content="JOqLN92S-8qTq7ZLWWMjOJIr0Xrzg_E-SyixuR-MoLQ"/>
 </head>
 <body>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MFHKT9V');
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MFHKT9V');
 </script>
 <!-- End Google Tag Manager -->
 <!-- NavMenus start-->
@@ -280,12 +309,13 @@
                         <li><a href="{{route('wholesale')}}">Wholesale Prices</a></li>
                         <li><a href="{{route('shipping')}}">Shiping and Payments</a></li>
                         <li><a href="{{route('purchase')}}">Purchase returns</a></li>
-						<li><a href="{{route('contact')}}">Contacts</a></li>
+                        <li><a href="{{route('contact')}}">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="top-nav-right">
                     @if(auth()->user())
-                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My orders</a>
+                        <a class="phone" href="{{route('cabinet')}}" style="margin-right: 10px; margin-left: -10px;">My
+                            orders</a>
                     @endif
                     <button data-popup="#popup-feedback" class="button-msg">Send message<i
                             class="fa fa-paper-plane"></i></button>
@@ -507,14 +537,18 @@
                                                 <div class="product-name">{{$v->title}}</div>
                                                 <div class="product-count">
                                                     <div data-max-count="100500" class="count-block -cart">
-                                                        <button data-price="{{$v->price}}" data-product_id="{{$v->id}}" class="button-dec"></button>
+                                                        <button data-price="{{$v->price}}" data-product_id="{{$v->id}}"
+                                                                class="button-dec"></button>
                                                         <div class="count">{{$v->count}}</div>
-                                                        <button data-price="{{$v->price}}" data-product_id="{{$v->id}}" class="button-inc"></button>
+                                                        <button data-price="{{$v->price}}" data-product_id="{{$v->id}}"
+                                                                class="button-inc"></button>
                                                     </div>
                                                 </div>
                                                 <div class="product-price">
                                                     @if($v->old_price)
-                                                        <div class="old-price strike dollar">{{$v->old_price}} @if($v->discount) - {{$v->discount}} %@endif </div>
+                                                        <div
+                                                            class="old-price strike dollar">{{$v->old_price}} @if($v->discount)
+                                                                - {{$v->discount}} %@endif </div>
                                                     @endif
                                                     <div class="price dollar">{{$v->price}}</div>
                                                 </div>
@@ -569,7 +603,7 @@
     <div class="fixed-panel-left">
         <div class="fixed-panel-search">
             <form action="#" id="mobile-search-form">
-                <input type="search" placeholder="Enter product name">
+                <input type="search" placeholder="Enter product name" id="input-search-mobile-form">
             </form>
         </div>
         <div class="fixed-panel-left-pages">Search of product</div>
@@ -595,7 +629,8 @@
                 <div class="main-panel-logo"><a href="#"><img src="img/svg/logo.svg" alt=""></a></div>
             </div>
             <div class="col-md-4">
-                <div class="footer-right tar"><a class="phone"> <i class="fa fa-phone"></i>{!! $txt->admin_phone ?? '' !!}</a>
+                <div class="footer-right tar"><a class="phone"> <i
+                            class="fa fa-phone"></i>{!! $txt->admin_phone ?? '' !!}</a>
                 </div>
             </div>
         </div>
@@ -738,13 +773,17 @@
 
                                     @foreach($cart['products'] as $k=>$v)
                                         <li>
-                                            <div class="product"><a href="{{\App\Helpers\Catalog\Products::buildUrl($v->meta['alias'],$urls[$v->categories[0]->id])}}" class="product-thumb"><img
+                                            <div class="product"><a
+                                                    href="{{\App\Helpers\Catalog\Products::buildUrl($v->meta['alias'],$urls[$v->categories[0]->id])}}"
+                                                    class="product-thumb"><img
                                                         src="{{$v->images[0]}}" alt=""></a>
                                                 <div class="text">
                                                     <div data-count="1000" class="product-name">{{$v->title}}</div>
                                                     <div class="product-price">
                                                         @if($v->old_price)
-                                                            <div class="old-price strike dollar">{{$v->old_price}}</div>@if($v->discount) - {{$v->discount}} %@endif
+                                                            <div
+                                                                class="old-price strike dollar">{{$v->old_price}}</div>@if($v->discount)
+                                                                - {{$v->discount}} %@endif
                                                         @endif
                                                         <div class="price dollar">{{$v->price}}</div>
                                                     </div>
@@ -822,7 +861,8 @@
                                     <div required class="label">First Name</div>
                                     <div class="field">
                                         <div class="input-wrap">
-                                            <input required type="text" name="shipping[firstName]" placeholder="First Name">
+                                            <input required type="text" name="shipping[firstName]"
+                                                   placeholder="First Name">
                                         </div>
                                     </div>
                                 </li>
@@ -830,7 +870,8 @@
                                     <div required class="label">Last Name</div>
                                     <div class="field">
                                         <div class="input-wrap">
-                                            <input required type="text" name="shipping[lastName]" placeholder="Last Name">
+                                            <input required type="text" name="shipping[lastName]"
+                                                   placeholder="Last Name">
                                         </div>
                                     </div>
                                 </li>
@@ -862,7 +903,7 @@
                                     <div class="label">State/Province</div>
                                     <div class="field">
                                         <div class="input-wrap">
-                                            <input type="text" name="shipping[state]"  placeholder="State/Province">
+                                            <input type="text" name="shipping[state]" placeholder="State/Province">
                                         </div>
                                     </div>
                                 </li>
@@ -870,7 +911,8 @@
                                     <div required class="label">ZIP/Postal Code</div>
                                     <div class="field">
                                         <div class="input-wrap">
-                                            <input required type="text" name="shipping[zip]"  placeholder="ZIP/Postal Code">
+                                            <input required type="text" name="shipping[zip]"
+                                                   placeholder="ZIP/Postal Code">
                                         </div>
                                     </div>
                                 </li>
@@ -878,7 +920,7 @@
                                     <div required class="label">Telephone</div>
                                     <div class="field">
                                         <div class="input-wrap">
-                                            <input required type="text" name="phone"  placeholder="Telephone">
+                                            <input required type="text" name="phone" placeholder="Telephone">
                                         </div>
                                     </div>
                                 </li>
@@ -896,7 +938,8 @@
                             <div class="row">
 
                                 <div class="col-md-8">
-                                    <div class="col-md-4 tac flr"><input type="submit" value="Confirm order" class="button"></div>
+                                    <div class="col-md-4 tac flr"><input type="submit" value="Confirm order"
+                                                                         class="button"></div>
                                     <div class="ssl-logo"><img src="img/icons/ssl-logo.png" alt=""></div>
                                 </div>
                             </div>
@@ -938,19 +981,27 @@
 <script src="js/libs.min.js"></script>
 <script src="js/laroute.js"></script>
 <script src="js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+        integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
+        crossorigin="anonymous"></script>
 
 <script src="js/common.js"></script>
 <script>
-    $('.open-mobile-menu-search .button-search').click(function(event) {
+    $('.open-mobile-menu-search .button-search').click(function (event) {
         event.preventDefault();
         $('.open-mobile-menu-search').toggleClass('show-search');
 
     });
 
-    $('.fixed-panel-right-button,.fixed-panel-left-pages').click(function(event) {
+    $('.fixed-panel-right-button,.fixed-panel-left-pages').click(function (event) {
         $('.fixed-panel').toggleClass('opened');
 
+    });
+
+    $('#mobile-search-form').on('submit', function (e) {
+        e.preventDefault();
+        let searchString = $('#input-search-mobile-form').val();
+        window.location.href = '/search?search=' + searchString;
     });
 </script>
 <script src="{{asset('/js/discount-product.js')}}"></script>
