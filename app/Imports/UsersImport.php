@@ -4,10 +4,13 @@ namespace App\Imports;
 
 use App\User;
 use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class UsersImport implements ToModel
 {
+    use Exportable;
+
     /**
      * @param array $row
      *

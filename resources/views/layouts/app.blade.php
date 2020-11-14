@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/gridonly.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/header.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/add_styles.min.css')}}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function-->
@@ -564,6 +565,24 @@
     {{--</ul>--}}
     {{--</div>--}}
 @endif
+<div class="fixed-panel">
+    <div class="fixed-panel-left">
+        <div class="fixed-panel-search">
+            <form action="#" id="mobile-search-form">
+                <input type="search" placeholder="Enter product name">
+            </form>
+        </div>
+        <div class="fixed-panel-left-pages">Search of product</div>
+    </div>
+    <div class="fixed-panel-right">
+        <button class="fixed-panel-right-button">
+            <div class="-inactive"><img src="img/svg/search.svg" alt=""></div>
+            <div class="-active">
+                <div class="close-icon"></div>
+            </div>
+        </button>
+    </div>
+</div>
 @yield('content')
 <footer class="footer">
     <div class="container">
@@ -583,7 +602,6 @@
     </div>
 </footer>
 <!-- Footer end-->
-</div>
 <!-- Popup start-->
 <div id="popup-feedback" class="popup-main popup-feedback">
     <div class="popup-wrapper">
@@ -923,6 +941,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous"></script>
 
 <script src="js/common.js"></script>
+<script>
+    $('.open-mobile-menu-search .button-search').click(function(event) {
+        event.preventDefault();
+        $('.open-mobile-menu-search').toggleClass('show-search');
+
+    });
+
+    $('.fixed-panel-right-button,.fixed-panel-left-pages').click(function(event) {
+        $('.fixed-panel').toggleClass('opened');
+
+    });
+</script>
 <script src="{{asset('/js/discount-product.js')}}"></script>
 <!-- Optimized loading JS End-->
 </body>

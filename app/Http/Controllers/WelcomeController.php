@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Exports\UsersExport;
 use App\Helpers\OrderHelper;
+use App\Imports\UsersImport;
 use App\Mail\PaymentUnsuccessful;
 use App\Mail\RegisterData;
 use App\Mail\SenderAdmin;
@@ -17,6 +19,7 @@ class WelcomeController extends Controller
 {
 
     public function index() {
+
         $categories = Category::where('data->main', true)->wherePublished(1)->with('meta')->take(9)->orderBy('data->number')->get();
         $url = \App\Helpers\Catalog\Categories::all();
         return view('welcome', ['categories' => $categories, 'urls' => $url['urls'] ]);
@@ -28,5 +31,8 @@ class WelcomeController extends Controller
         return \View::make("_partials/wishlist", ["wishlist" => $products, 'urls'=>$url['urls']]);
     }
 
-
+    public function export()
+    {
+        return (new UsersExport())->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
+    }
 }
