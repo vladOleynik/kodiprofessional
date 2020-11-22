@@ -637,6 +637,7 @@
     </div>
 </footer>
 <!-- Footer end-->
+</div>
 <!-- Popup start-->
 <div id="popup-feedback" class="popup-main popup-feedback">
     <div class="popup-wrapper">
@@ -951,6 +952,7 @@
     </div>
 </div>
 <!-- Popup end-->
+
 <!-- Optimized loading JS Start-->
 <script>
     var scr = {
