@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Helpers\OrderHelper;
 use App\Mail\PaymentUnsuccessful;
+use App\Models\Shop\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
