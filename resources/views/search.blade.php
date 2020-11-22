@@ -32,9 +32,10 @@
                     <div class="catalogue-block-cards">
                         <div class="row">
                             <div class="cards-wrapper">
-
                                 @foreach($products as $k=>$v)
-                                    @include('catalog.item', ['item'=>$v, 'active'=>$urls[$v->categories[0]->id], 'wishlist'=>$wishlist])
+                                    @if(isset($urls[$v->categories[0]->id]))
+                                        @include('catalog.item', ['item'=>$v, 'active'=>$urls[$v->categories[0]->id], 'wishlist'=>$wishlist])
+                                    @endif
                                 @endforeach
                             </div>
                         </div>

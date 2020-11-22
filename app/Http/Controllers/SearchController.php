@@ -22,11 +22,12 @@ class SearchController extends Controller
             $url = \App\Helpers\Catalog\Categories::all();
 
             foreach ($result as $res) {
-
-                $res['link'] = $url['urls'][$res->categories[0]->id];
+                if (isset($url['urls'][$res->categories[0]->id])) {
+                    $res['link'] = $url['urls'][$res->categories[0]->id];
+                }
             }
             $wishlist = Product::wishlist();
-            return view('search', ['products' => $result, 'query' => $search, 'wishlist' => $wishlist, 'urls'=>$url['urls']]);
+            return view('search', ['products' => $result, 'query' => $search, 'wishlist' => $wishlist, 'urls' => $url['urls']]);
         } else {
             return abort('404');
         }
