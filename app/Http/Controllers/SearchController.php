@@ -13,7 +13,9 @@ class SearchController extends Controller
 
 
         $search = request()->get('search');
-
+        if($search==null){
+            return redirect('/');
+        }
         if ($search) {
             $result = Product::whereHas('categories')->with('categories.meta')->where('title', 'LIKE', '%' . $search . '%')
                 ->productSort()->published()->paginate(12);
