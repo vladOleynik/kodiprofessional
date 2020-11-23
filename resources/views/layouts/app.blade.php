@@ -987,7 +987,7 @@
         integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
         crossorigin="anonymous"></script>
 
-<script src="js/common.js"></script>
+{{--<script src="js/common.js"></script>--}}
 <script>
     $('.open-mobile-menu-search .button-search').click(function (event) {
         event.preventDefault();
