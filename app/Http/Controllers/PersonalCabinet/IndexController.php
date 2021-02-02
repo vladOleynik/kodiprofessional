@@ -28,7 +28,7 @@ class IndexController extends Controller
 
     public function size()
     {
-        $df = round(disk_free_space("/") / 1024 / 1024 / 1024);
+        $df = round(disk_free_space() / 1024 / 1024 / 1024);
         print("Free space: $df GB");
     }
 }
