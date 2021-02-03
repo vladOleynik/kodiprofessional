@@ -28,6 +28,7 @@ class IndexController extends Controller
 
     public function size()
     {
-        var_dump(exec('df -h'));
+        echo exec('df -ht /var')."<br>";
+        echo exec('df -ht /home');
     }
 }
