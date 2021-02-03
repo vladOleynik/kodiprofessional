@@ -34,6 +34,7 @@ Route::get('/google-merchant-3.xml', 'HomeController@feed3')->name('xml.feed3');
 Route::get('/personal-cabinet', 'PersonalCabinet\IndexController@index')->name('cabinet')->middleware('auth');
 Route::get('/product-discount', 'ProductDiscount@getListProducts')->middleware('auth','admin');
 Route::get('/get-disk-size', 'PersonalCabinet\IndexController@size')->middleware('auth','admin');
+Route::get('/get-last-backup', 'PersonalCabinet\IndexController@backup')->middleware('auth','admin');
 Route::post('/save-discount', 'ProductDiscount@saveDiscount')->middleware('auth','admin')->name('saveDiscount');
 Route::post('/find-product', 'ProductDiscount@getProductByTitle')->middleware('auth','admin');
 Route::post('/save-dicsount', 'ProductDiscount@setDiscount')->middleware('auth','admin');

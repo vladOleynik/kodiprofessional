@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PersonalCabinet;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
 {
@@ -30,5 +31,11 @@ class IndexController extends Controller
     {
         $df = round(disk_free_space("/var") / 1024 / 1024 / 1024) + round(disk_free_space('/home') / 1024 / 1024 / 1024);
         print("Free space in: $df GB");
+    }
+
+    public function backup()
+    {
+//        $files = Storage::files('/storage/');
+//        return response()->file(');
     }
 }
