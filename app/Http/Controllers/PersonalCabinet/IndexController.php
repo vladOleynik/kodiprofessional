@@ -28,6 +28,6 @@ class IndexController extends Controller
 
     public function size()
     {
-        echo disk_free_space('/');
+        echo disk_free_space('/var');
     }
 }
