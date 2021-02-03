@@ -35,7 +35,8 @@ class IndexController extends Controller
 
     public function backup()
     {
-//        $files = Storage::files('/storage/');
+        $files = Storage::files('/home/admin/web/kodiprofessional.com/public_html/storage/app/Laravel/');
+        var_dump($files);
 //        return response()->file(');
     }
 }
