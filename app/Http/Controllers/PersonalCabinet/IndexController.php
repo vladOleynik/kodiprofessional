@@ -28,6 +28,6 @@ class IndexController extends Controller
 
     public function size()
     {
-        echo exec('df -h');
+        var_dump(exec('df -h'));
     }
 }
