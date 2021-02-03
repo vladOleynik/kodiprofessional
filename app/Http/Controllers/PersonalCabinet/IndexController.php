@@ -28,7 +28,6 @@ class IndexController extends Controller
 
     public function size()
     {
-        echo exec('df -ht /var')."<br>";
-        echo exec('df -ht /home');
+        echo disk_free_space('/');
     }
 }
