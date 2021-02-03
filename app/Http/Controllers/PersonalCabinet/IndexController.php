@@ -28,6 +28,7 @@ class IndexController extends Controller
 
     public function size()
     {
-        echo disk_free_space('/var');
+        $df = round(disk_free_space("/var") / 1024 / 1024 / 1024) + round(disk_free_space('/home') / 1024 / 1024 / 1024);
+        print("Free space in: $df GB");
     }
 }
