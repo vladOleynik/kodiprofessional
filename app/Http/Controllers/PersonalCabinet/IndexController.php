@@ -29,14 +29,16 @@ class IndexController extends Controller
 
     public function size()
     {
-        $df = round(disk_free_space("/") / 1024 / 1024 / 1024);
+        $df = round(disk_free_space("/var") / 1024 / 1024 / 1024);
         print("Free space in: $df GB");
     }
 
     public function backup()
     {
-        $files = Storage::files('/home/admin/web/kodiprofessional.com/public_html/storage/app/Laravel/');
-        var_dump($files);
+        $files = Storage::files('/Laravel');
+        echo "<pre>";
+        return response()->download(storage_path('app/'.(end($files))));
+          echo "</pre>";
 //        return response()->file(');
     }
 }
