@@ -179,27 +179,27 @@ return [
             /*
              * The number of days for which backups must be kept.
              */
-            'keepAllBackupsForDays' => 10,
+            'keepAllBackupsForDays' => 1,
 
             /*
              * The number of days for which daily backups must be kept.
              */
-            'keepDailyBackupsForDays' => 30,
+            'keepDailyBackupsForDays' => 2,
 
             /*
              * The number of weeks for which one weekly backup must be kept.
              */
-            'keepWeeklyBackupsForWeeks' => 8,
+            'keepWeeklyBackupsForWeeks' => 3,
 
             /*
              * The number of months for which one monthly backup must be kept.
              */
-            'keepMonthlyBackupsForMonths' => 4,
+            'keepMonthlyBackupsForMonths' => 2,
 
             /*
              * The number of years for which one yearly backup must be kept.
              */
-            'keepYearlyBackupsForYears' => 2,
+            'keepYearlyBackupsForYears' => 1,
 
             /*
              * After cleaning up the backups remove the oldest backup until
